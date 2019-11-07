@@ -2,6 +2,7 @@ import dotEnv from 'dotenv';
 import mailjet from 'node-mailjet';
 import templates from './templates.mailing';
 dotEnv.config();
+
 const mj = mailjet.connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE);
 
 //const getTemplateId = name => Object.values(templates).find( el => el.name === name);
@@ -20,7 +21,7 @@ const sendTemplate = async (name, ...rest) => {
       Messages: [
         {
           From: {
-            Email: 'contact@inasu.io',
+            Email: process.env.EMAIL_EXP,
             Name: 'Inasu Team',
           },
           To: [
