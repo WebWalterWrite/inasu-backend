@@ -3,7 +3,7 @@ const router = Router();
 
 router.use((req, res, next) => {
   console.log(req.headers.origin)
-  if (req.headers.origin !== 'https://inasu.netlify.com/')
+  if (req.headers.origin !== 'https://inasu.netlify.com')
     return res.status(403).json({ error: 'bad request' })
 
   res.header("Access-Control-Allow-Origin", req.headers.origin);
