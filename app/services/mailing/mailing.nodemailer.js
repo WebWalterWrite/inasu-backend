@@ -5,7 +5,7 @@ const { env: { NODEMAILER_HOST, NODEMAILER_USER, NODEMAILER_PASS } } = process;
 const transporter = nodemailer.createTransport({
   host: NODEMAILER_HOST,
   port: 587,
-  secure: false,
+  secure: true,
   auth: {
     user: NODEMAILER_USER,
     pass: NODEMAILER_PASS
