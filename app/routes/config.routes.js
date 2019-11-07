@@ -2,7 +2,7 @@ import { Router } from 'express';
 const router = Router();
 
 router.use((req, res, next) => {
-  if (req.headers.origin !== 'https://localhost:3000')
+  if (req.headers.origin !== 'https://inasu.netlify.com/')
     return res.status(403).json({ error: 'bad request' })
 
   res.header("Access-Control-Allow-Origin", req.headers.origin);
